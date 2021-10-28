@@ -11,7 +11,7 @@ pipeline{
         }
         stage('Restore packages'){
             steps{
-                bat "dotnet restore C:\Users\Public\DotNet_Projects\DotNetCore3\DotNetCore3.csproj"
+                bat "dotnet restore C:\\Users\\Public\\DotNet_Projects\\DotNetCore3\\DotNetCore3.csproj"
             }
         }
     }
