@@ -1,24 +1,12 @@
-pipeline{
-    agent any
-    
-    stages {
-        stage('Required dependancies') {
-             steps {
-                 sh 'git --version'
-             }
-         }
-
+node{
+    stage('SCM Checkout'){
         
-        /*stage('SCM Checkout'){
-            
-            git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dagilitytrainingassignmentmavenfreestyle.git'
-        }
-        stage('Restore packages'){
-            steps{
-                bat "dotnet restore C:\\Users\\Public\\DotNet_Projects\\DotNetCore3\\DotNetCore3.csproj"
-            }
-        }*/
+        git 'https://gitlab.training.dagility.com/manojkumar_gnanasekaran/dotnetcore3'
     }
-      
-    
- }
+    stage('Build project'){
+        bat 'msbuild'
+    }
+    stage('Publish project'){
+        bat 'dotnet publish --configuration Release...'
+    }
+}
