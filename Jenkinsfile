@@ -12,7 +12,7 @@ node{
       bat "dotnet clean ./DotNetCore3.csproj"
     }
     stage('Build project'){
-        bat 'msbuild'
+        bat 'dotnet build ./DotNetCore3.csproj'
     }
     stage('Publish project'){
         bat 'dotnet publish ./DotNetCore3.csproj'
