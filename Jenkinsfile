@@ -26,9 +26,8 @@ pipeline {
                  powershell '''dotnet publish ./DotNetCore3.csproj'''
             }           
         }
-        stage('Deploy-App')
-        {
-	        steps {
+        stage('Deploy-App'){
+	        steps{
                 powershell '''
                 Import-Module WebAdministration
                 Remove-WebSite -Name webapp-core
