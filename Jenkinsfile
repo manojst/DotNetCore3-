@@ -17,8 +17,7 @@ node{
     stage('Publish project'){
         bat 'dotnet publish ./DotNetCore3.csproj'
     }
-    stage('Deploy-App')
-    {
+    stage('Deploy-App'){
       steps {
         powershell '''
         Import-Module WebAdministration
