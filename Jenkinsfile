@@ -37,8 +37,8 @@ pipeline {
                 $websiteurl= "dotnetappcore.com"
                 $websitename= "dotnetwebapp-core"
                 New-WebAppPool -Name $websitename -Force
-                New-Website -Name $websitename -Port 80 -IPAddress * -HostHeader $websiteurl -PhysicalPath $filepath -ApplicationPool $websitename -Force
-                New-WebBinding -Name "$websitename" -IPAddress "*" -Port 80 -Protocol http
+                New-Website -Name $websitename -Port 81 -IPAddress * -HostHeader $websiteurl -PhysicalPath $filepath -ApplicationPool $websitename -Force
+                New-WebBinding -Name "$websitename" -IPAddress "*" -Port 81 -Protocol http
                 '''
             }
         }
