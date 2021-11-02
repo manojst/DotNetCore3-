@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Deploy-App'){
 	        steps{
-                powershell '''
+                powershell '''
                 Import-Module WebAdministration
                 Remove-WebSite -Name webapp-core
                 Remove-WebAppPool -Name webapp-core 
