@@ -32,7 +32,7 @@ pipeline {
                 #Import-Module WebAdministration
                 #Remove-WebSite -Name webapp-core
                 #Remove-WebAppPool -Name webapp-core 
-                New-WebAppPool -Name webapp-core -Force 
+                New-WebAppPool -Name webapp-core -Force 
                 $filepath= "C:\\Users\\Public\\DotNet_Projects\\DotNetCore3\\bin\\Release\\netcoreapp3.1\\publish"
                 $websiteurl= "dotnetappcore.com"
                 $websitename= "dotnetwebapp-core"
