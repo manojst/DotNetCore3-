@@ -28,8 +28,7 @@ pipeline {
         }
         stage('Deploy-App'){
 	        steps{
-                powershell '''
-                Import-Module WebAdministration
+                powershell '''Import-Module WebAdministration
                 Remove-WebSite -Name webapp-core
                 Remove-WebAppPool -Name webapp-core 
                 New-WebAppPool -Name webapp-core -Force 
@@ -37,7 +36,7 @@ pipeline {
                 $websiteurl = "dotnetappcore.com"
                 $websitename= "dotnetwebapp-core" 
                 New-WebAppPool -Name $websitename -Force
-                                                                               New-Website -Name $websitename -Port 83 -IPAddress * -HostHeader $websiteurl -PhysicalPath $filepath -ApplicationPool                 $websitename -Force
+                New-Website -Name $websitename -Port 83 -IPAddress * -HostHeader $websiteurl -PhysicalPath $filepath -ApplicationPool                 $websitename -Force
                 New-WebBinding -Name "$websitename" -IPAddress "*" -Port 84 -Protocol http'''
             }
         }
