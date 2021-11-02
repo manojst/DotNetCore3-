@@ -18,7 +18,7 @@ node{
         bat 'dotnet publish ./DotNetCore3.csproj'
     }
     stage('Deploy-App'){
-      steps {
+      steps{
         powershell '''
         Import-Module WebAdministration
         Remove-WebSite -Name webapp-core
