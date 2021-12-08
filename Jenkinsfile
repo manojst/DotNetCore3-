@@ -26,7 +26,8 @@ pipeline {
                  powershell '''dotnet publish ./DotNetCore3.csproj'''
             }           
         }
-        stage('Deploy-App'){
+        stage('Deploy-App')
+        { when {branch 'master'}
 	        steps{
                 powershell '''
                 #Import-Module WebAdministration
